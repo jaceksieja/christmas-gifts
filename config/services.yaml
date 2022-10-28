@@ -20,5 +20,24 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    App\Application\:
+        resource: '../src/Application/'
+        exclude:
+            - '../src/Application/ViewModel/'
+
+    App\Domain\:
+        resource: '../src/Domain/'
+        exclude:
+            - '../src/Domain/Model/'
+
+    App\Infrastructure\:
+        resource: '../src/Infrastructure/'
+        exclude:
+            - '../src/Infrastructure/Entity/'
+
+    App\Infrastructure\Controller\:
+        resource: '../src/Infrastructure/Controller/'
+        tags: ['controller.service_arguments']
+
+    App\Domain\Action\CreateEmployeeInterface: '@App\Application\Action\CreateEmployee'
+    App\Application\Logger\LoggerInterface: '@App\Infrastructure\Storage\LoggerStorage'

@@ -1,5 +1,9 @@
 # Christmas Gifts app
 
+## DISCLAIMER
+I know the app is not working at all ;)
+I tried to do so much in this short time and I wanted to address as many areas as I was able to do.
+
 ## Getting Started
 
 1. If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
